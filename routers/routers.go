@@ -1,14 +1,12 @@
 package routers
 
 import (
-	"ACMZX/models"
-	"fmt"
+	"ACMZX/controller"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 func SetupRouter() *gin.Engine{
-	var applyForm models.ApplyForm
 	r := gin.Default()
 	// found templates
 	r.LoadHTMLGlob("templates/*")
@@ -22,13 +20,8 @@ func SetupRouter() *gin.Engine{
 	r.GET("/join", func(ctx *gin.Context) {
 		ctx.HTML(http.StatusOK, "login.html", nil)
 	})
-	r.POST("/join", func(ctx *gin.Context) {
-		if err := ctx.BindJSON(&applyForm); err != nil {
-			fmt.Printf("Bind failed: %v\n", err)
-			return
-		}
-		fmt.Println(applyForm)
-		ctx.HTML(http.StatusOK, "login.html", nil)
-	})
+	// submit form
+	// create data
+	r.POST("/join", controller.CreateForm)
 	return r
 }
