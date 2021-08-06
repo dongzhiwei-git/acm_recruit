@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon"
+          href="https://img2018.cnblogs.com/blog/1627056/201909/1627056-20190910154326049-394994833.jpg">
+    <meta name="referrer" content="never">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>HNIT-NAO</title>
+
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/bootsnav.css">
+    <link rel="stylesheet" href="../static/css/robotIndex.css">
+    <link rel="canonical" href="https://cangzhou-china.com/"/>
+</head>
+
+<body class="font-hei">
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+<div class="header" id="particles-js">
+    <nav class="nav navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!--在移动端的时候导航条折叠起来，三横的样式出现，点击该样式可以显示或隐藏导航条上的内容-->
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="color: white;" href="{{ .acm.login }}" target="_blank" class="navbar-brand">
+                    Join Us
+                </a>
+            </div>
+            <div style="color: white;font-size: 16px" id="menu" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#welcome">欢迎</a>
+                    </li>
+                    <li>
+                        <a href="{{ .acm.index}}">首页</a>
+                    </li>
+                    <li>
+                        <a href="http://doc.aldebaran.com/2-8/naoqi/index.html" target="_blank">技术</a>
+                    </li>
+                    <li>
+                        <a href="http://www.hnitoj.cn" target="_blank">HNITOJ</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio">关于Team</a>
+                    </li>
+                    <li>
+                        <a href="https://baike.baidu.com/item/湖南省大学生计算机程序设计大赛/2867837?fr=aladdin"
+                           target="_blank">HNCPC</a>
+                    </li>
+                    <li>
+                        <a href="https://www.softbankrobotics.com/" target="_blank">关于NAO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="welcome">
+        <div class="container">
+            <div class="row">
+                <div class="main_home">
+                    <div class="home_text">
+                        <h1 class="text-white">HNIT - NAO</h1>
+                        <br>
+                        <h1>集智慧与炫酷于一身的仿人机器人</h1></div>
+                    <div>
+                        <a href="" target="_blank"
+                           class="btn btn-default">报名</a>&nbsp;
+                        <a href="" target="_blank"
+                           class="btn btn-default">ACM入口</a>&nbsp;&nbsp;
+                        <a href="" target="_blank"
+                           class="btn btn-default">ACMer兵种树</a>&nbsp;&nbsp;
+                        <a href="" target="_blank"
+                           class="btn btn-default">ACM照片墙</a>&nbsp;&nbsp;
+                        <a href="" target="_blank"
+                           class="btn btn-default">NAOの照片墙</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section id="about" class="about">
+    <div class="white">
+        <div class="container">
+            <div class="row">
+                <div class="main_about">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="about_content">
+                            <h2>我们的目标</h2>
+                            <div class="separator_left"></div>
+                            <blockquote>
+                                以赛促学，学以养赛<br>
+                                致力于为人形机器人的发展做出一份贡献，并在竞赛中为学校、为团队取得优异成绩
+                            </blockquote>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="about_bottom_content">
+                <br><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <div class="ab_head">
+                                <h3>要求</h3></div>
+                            <p>1. 面向19，20级的同学，专业，学院不限<br>
+                                2. 逻辑思维良好，吃苦耐劳，有团队荣誉感，服从管理。<br>
+                                3. 不会就学，不懂就问，态度积极。<br>
+                                4. 每天晚上的训练不能无故缺勤早退，若违反情况严重者，可考虑开除队籍。<br><br>
+                                满足以下条件者，优先考虑：<br>
+                                1. 参加过ACM暑期集训或平时训练。<br>
+                                2. 熟练使用Python或者C++。<br>
+                                3. 自己独立（或和团队一起）完成过小项目。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <div class="ab_head">
+                                <h3>训练内容</h3></div>
+                            <p>1. python语言的学习。<br>
+                                2. nao机器人的基本控制以及使用。<br>
+                                3. 计算机视觉（opencv占主要部分），基础的机器学习应用。<br>
+                                4. Linux的基本使用。<br><br>
+                                上述所有内容均为NAO机器人高尔夫竞赛的基础。
+                            </p></div>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div>
+                            <div class="ab_head">
+                                <h3>选拔流程</h3></div>
+                            <p>第一轮：提交简历，筛选。（虚写简历，态度不正者，不予考虑）<br>
+                                第二轮：面试。第一轮被筛选出局，若认为自己确实可以胜任，也可参加面试。<br>
+                                <br>
+                                最终选拔出六位新队员，晚自习时间在实验室进行晚训，以及暑假为期两个月的集训<br>
+                                暑假结束时，参加省赛。
+                            </p></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div>
+                            <div class="ab_head">
+                                <h3>联系方式</h3>
+                            </div>
+                            <p>
+                                简历投递邮箱：1848600800@qq.com<br>
+                                招新Q群：235111392<br><br>
+                                欢迎大家进群交流!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+</section>
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="main_service roomy-100">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                    <div class="head_title text-left">
+                        <h2>关于我们的Team</h2>
+                        <div class="separator_auto" style="font-size: 18px"></div>
+                        <br><br>
+                        <p>
+                            关于NAO机器人竞赛：<br>
+                                &nbsp;&nbsp;&nbsp;目前阶段，我们实验室是参加湖南省机器人高尔夫大赛。<br>
+                                &nbsp;&nbsp;&nbsp;关于实际内容，主要分为三部分：<br>
+                                &nbsp;&nbsp;&nbsp;1)动作部分:完成机器人的握杆行走，击球等动作以及行走时的步态规划、路径规划。<br>
+                                &nbsp;&nbsp;&nbsp;2)视觉部分:完成机器人对目标的定位（球洞、高尔夫球、边界线等）。<br>
+                                &nbsp;&nbsp;&nbsp;3)整合：实现机器人自主完成整个高尔夫竞赛流程（包括击球、寻找目标、目标定位、最终击球等）。<br>
+                            <br>
+                            <br>
+                            下述内容中有部分也包含在机器人编程的学习中（但并非全部），机器人编程实际上算是比较综合的：<br>
+                                &nbsp;&nbsp;&nbsp;从汇编到高级语言，(汇编、c、c++、java、python)，单片机，从系统(windows/Linux)/网络（网络编程） 到桌面应用，<br>
+                            从后端到前端，web应用，从机器学习到深度学习（AI），爬虫，数据分析，计算机视觉(如Opencv)，数据类竞赛。<br>
+                            <br>
+                            机器人并没有大家想象的那么难，从现在开始的话，还是有很多空余时间的。<br>
+                            <br>
+                            学习机器人的空闲时间，上述领域大家都可以选学，如有能够指导学弟学妹的地方，学长定会尽力。<br>
+                            学长才疏学浅，其余未涉猎的领域不能给学弟学妹们太多建议，还望见谅。<br>
+                            <br>
+                            学长的寄语：<br>
+                              &nbsp;&nbsp;&nbsp;希望大家在本科阶段可以多扩展一些视野，不要局限于狭小空间。<br>
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer" class="footer" style="background-color: #ffffff;">
+    <div class="container">
+        <div class="row">
+            <h2>
+                <span>我们相信</span><br><br>
+                <span>通过持续的学习，你终将成为大犇!</span><br>
+            </h2>
+        </div>
+
+    </div>
+    <div id="footer1" style="color: rgb(255 69 0);   text-align: center; font-size: 13px; padding-bottom:18px;">
+        <br><br>
+        Designed By Coodyz/Hzh<br>
+        ©2020 HNIT-ACM
+    </div>
+</footer>
+</body>
+
+<script src="../static/js/robotIndex.js"></script>
+</html>
