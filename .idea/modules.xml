@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ACMZX.iml" filepath="$PROJECT_DIR$/.idea/ACMZX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/acm_recruit.iml" filepath="$PROJECT_DIR$/.idea/acm_recruit.iml" />
     </modules>
   </component>
 </project>

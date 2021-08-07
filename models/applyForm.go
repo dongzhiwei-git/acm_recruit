@@ -2,19 +2,34 @@ package models
 
 import (
 	"ACMZX/dao"
+	"github.com/jinzhu/gorm"
+	"strconv"
 )
 
+type Model struct {
+	ID         uint `gorm:"AUTO_INCREMENT"`
+}
+
 type ApplyForm struct {
-	Group      string `json:"group"`
-	Major      string `json:"major"`
-	Classes    string `json:"classes"`
-	StudentNum string `json:"studentNum"`
-	Name       string `json:"name"`
-	PhoneNum   string `json:"phoneNum"`
-	QQNum      string `json:"qqNum"`
+	gorm.Model
+	Group         string `json:"group" gorm:"type:varchar(20)"`
+	Major         string `json:"major" gorm:"type:varchar(20)"`
+	Series        string `json:"series" gorm:"type:varchar(20)"`
+	Classes       string `json:"classes" gorm:"type:varchar(20)"`
+	StudentNum    string `json:"studentNum" gorm:"type:varchar(20)"`
+	Name          string `json:"name" gorm:"type:varchar(20)"`
+	Sex           string `json:"sex" gorm:"type:varchar(20)"`
+	PhoneNum      string `json:"phoneNum" gorm:"type:varchar(20)"`
+	QQNum         string `json:"qqNum" gorm:"type:varchar(20)"`
+	Introductions string `json:"introductions"`
 }
 
 func CreateForm(applyForm *ApplyForm) (err error) {
+	if sex, _ := strconv.Atoi(applyForm.Sex);sex==1{
+		applyForm.Sex = "男"
+	}else {
+		applyForm.Sex = "女"
+	}
 	err = dao.DB.Create(&applyForm).Error
 	return err
 
