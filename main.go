@@ -1,9 +1,9 @@
 package main
 
 import (
-	"ACMZX/dao"
-	"ACMZX/models"
-	"ACMZX/routers"
+	"acm_recruit/dao"
+	"acm_recruit/models"
+	"acm_recruit/routers"
 	"fmt"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"

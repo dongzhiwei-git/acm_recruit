@@ -1,7 +1,7 @@
 package models
 
 import (
-	"ACMZX/dao"
+	"acm_recruit/dao"
 	"github.com/jinzhu/gorm"
 	"strconv"
 )
@@ -31,4 +31,12 @@ func CreateForm(applyForm *ApplyForm) (err error) {
 	err = dao.DB.Create(&applyForm).Error
 	return err
 
+}
+func QueryAllForm()(af []ApplyForm, err error){
+	err = dao.DB.Find(&af).Error
+	return af, err
+}
+func QueryForm(uid uint)(err error){
+	err = dao.DB.Where("uid=?", uid).First(&ExtractTable{}).Error
+	return err
 }

@@ -1,7 +1,7 @@
 package models
 
 import (
-	"ACMZX/dao"
+	"acm_recruit/dao"
 	"github.com/jinzhu/gorm"
 )
 
@@ -18,6 +18,15 @@ func QueryExtractTable(et ExtractTable) (err error) {
 	return err
 
 }
+//func QueryAllExtractTable(et []ExtractTable) ([]ExtractTable, error ) {
+//
+//	if err := dao.DB.Find(&et).Error; err != nil {
+//		return nil, err
+//	}
+//	return et, nil
+//
+//}
+
 func CreateExtractTable(et *ExtractTable)(err error){
 	err = dao.DB.Create(et).Error
 	return err

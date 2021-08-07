@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"ACMZX/models"
+	"acm_recruit/models"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"

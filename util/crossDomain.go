@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func CrosHandler() gin.HandlerFunc {
+func CrossHandler() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		method := c.Request.Method
 		origin := c.Request.Header.Get("Origin")

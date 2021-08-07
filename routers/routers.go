@@ -1,8 +1,8 @@
 package routers
 
 import (
-	"ACMZX/controller"
-	"ACMZX/util"
+	"acm_recruit/controller"
+	"acm_recruit/util"
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,7 +14,7 @@ func SetupRouter() *gin.Engine {
 	{
 		r = gin.Default()
 		// to solve the cross domain
-		r.Use(util.CrosHandler())
+		r.Use(util.CrossHandler())
 	}
 	// found templates
 	//r.LoadHTMLGlob("templates/*")

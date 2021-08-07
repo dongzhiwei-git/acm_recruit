@@ -1,7 +1,7 @@
 package models
 
 import (
-	"ACMZX/dao"
+	"acm_recruit/dao"
 	"github.com/jinzhu/gorm"
 )
 
