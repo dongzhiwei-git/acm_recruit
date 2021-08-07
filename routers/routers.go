@@ -42,6 +42,12 @@ func SetupRouter() *gin.Engine {
 	{
 		r.POST("/extract", controller.QueryExtractTable)
 		r.POST("/admin", controller.CreateExtractTable)
+
+	}
+	// admin register and login
+	{
+		r.POST("/login", controller.AdminLogin)
+		r.POST("/register", controller.AdminRegister)
 	}
 
 	return r

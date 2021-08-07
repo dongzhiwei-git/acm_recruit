@@ -22,6 +22,7 @@ func main() {
 	// create table applyFrom
 	dao.DB.AutoMigrate(models.ApplyForm{})
 	dao.DB.AutoMigrate(models.ExtractTable{})
+	dao.DB.AutoMigrate(models.Admin{})
 
 	// setup router
 	r := routers.SetupRouter()

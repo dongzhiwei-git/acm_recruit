@@ -6,9 +6,7 @@ import (
 	"strconv"
 )
 
-type Model struct {
-	ID         uint `gorm:"AUTO_INCREMENT"`
-}
+
 
 type ApplyForm struct {
 	gorm.Model

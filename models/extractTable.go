@@ -2,10 +2,11 @@ package models
 
 import (
 	"ACMZX/dao"
+	"github.com/jinzhu/gorm"
 )
 
 type ExtractTable struct {
-	ID  uint `gorm:"AUTO_INCREMENT"`
+	gorm.Model
 	Uid uint `gorm:"type:in" form:"uid"`
 }
 
