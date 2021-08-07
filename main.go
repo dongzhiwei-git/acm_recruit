@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+
 	// connect database
 	err := dao.InitMySQL()
 	if err != nil {
@@ -23,8 +24,9 @@ func main() {
 
 	// setup router
 	r := routers.SetupRouter()
+
     // setup listen
-	err = r.Run("127.0.0.1:8000")
+	err = r.Run(":8000")
 	if err != nil {
 		fmt.Printf("run failed: %v\n", err)
 		return
