@@ -35,7 +35,6 @@ func SetupRouter() *gin.Engine {
 		// create data
 
 		r.POST("/join", controller.CreateForm)
-
 	}
 
 	// extract table
