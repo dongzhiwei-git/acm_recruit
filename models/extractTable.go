@@ -7,15 +7,15 @@ import (
 
 type ExtractTable struct {
 	gorm.Model
-	Uid uint `gorm:"type:in" form:"uid"`
+	Uid string `gorm:"type:string" json:"password"`
 }
 
-func QueryExtractTable(et ExtractTable) (err error) {
+func QueryExtractTable(et ExtractTable) (et1 ExtractTable, err error) {
+	if err = dao.DB.Where("uid=?", et.Uid).First(&et1).Error; err != nil {
 
-	if err = dao.DB.Where("uid=?", et.Uid).First(&et).Error; err != nil {
-		return err
+		return et1,err
 	}
-	return err
+	return et1,err
 
 }
 //func QueryAllExtractTable(et []ExtractTable) ([]ExtractTable, error ) {

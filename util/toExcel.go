@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func ToExcel(form []models.ApplyForm, ctx *gin.Context){
+func 	ToExcel(form []models.ApplyForm, ctx *gin.Context){
 	categories := map[string]string{
 		"A1": "序号",
 		"B1": "组别",
@@ -67,10 +67,10 @@ func ToExcel(form []models.ApplyForm, ctx *gin.Context){
 	ctx.Header("Content-Disposition", "attachment; filename="+"Workbook.xlsx")
 	ctx.Header("Content-Transfer-Encoding", "binary")
 	_ = f.Write(ctx.Writer)
-	err := f.SaveAs("testoo1.xlsx")
-	if err != nil {
-		panic(err)
-	}
+	//err := f.SaveAs("testoo1.xlsx")
+	//if err != nil {
+	//	panic(err)
+	//}
 
 
 }

@@ -2,8 +2,8 @@ package routers
 
 import (
 	"acm_recruit/controller"
-	"acm_recruit/util"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 var r *gin.Engine
@@ -14,7 +14,11 @@ func SetupRouter() *gin.Engine {
 	{
 		r = gin.Default()
 		// to solve the cross domain
-		r.Use(util.CrossHandler())
+		//r.Use(util.CrossHandler())
+		r.GET("/ping",func(ctx *gin.Context){
+			ctx.JSON(http.StatusOK,nil)
+		})
+
 	}
 	// found templates
 	//r.LoadHTMLGlob("templates/*")

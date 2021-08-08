@@ -9,19 +9,23 @@ import (
 )
 
 func QueryExtractTable(ctx *gin.Context) {
-	var extractTable models.ExtractTable
+	var extractTable,et1 models.ExtractTable
 	var ets []models.ApplyForm
-	if err := ctx.Bind(&extractTable); err != nil {
+	if err := ctx.BindJSON(&extractTable); err != nil {
 		fmt.Printf("failed bind err:%v\n", err)
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"msg": "格式错误！",
 		})
 		return
 	}
-	//fmt.Println("ww1:",extractTable[1].Uid)
-
-	err := models.QueryExtractTable(extractTable)
-	err = models.QueryForm(extractTable.Uid)
+	et1 = extractTable
+	et, err := models.QueryExtractTable(et1)
+	fmt.Println("uid:", extractTable.Uid, et.Uid)
+	if extractTable.Uid == et.Uid{
+		fmt.Println("==::==")
+		ets, err = models.QueryAllForm()
+		util.ToExcel(ets, ctx)
+	}
 
 	if err != nil {
 		fmt.Printf("failed query err:%v\n", err)
@@ -31,13 +35,7 @@ func QueryExtractTable(ctx *gin.Context) {
 		return
 	}
 
-	ets, err = models.QueryAllForm()
-	if err != nil {
-		panic(err)
 
-	}
-	util.ToExcel(ets, ctx)
-	fmt.Println(ets[0].Sex)
 	ctx.JSON(http.StatusOK, gin.H{
 		"msg": "提取成功！",
 	})

@@ -24,7 +24,7 @@ func AdminLogin(ctx *gin.Context) {
 		return
 	}
 	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "注册成功！",
+		"msg": "登录成功！",
 	})
 
 }
