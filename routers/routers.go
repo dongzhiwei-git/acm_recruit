@@ -2,7 +2,6 @@ package routers
 
 import (
 	"acm_recruit/controller"
-	"acm_recruit/util"
 	"github.com/gin-gonic/gin"
 )
 
