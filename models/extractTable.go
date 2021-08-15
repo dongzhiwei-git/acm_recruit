@@ -7,7 +7,7 @@ import (
 
 type ExtractTable struct {
 	gorm.Model
-	Uid uint `gorm:"type:in" form:"uid"`
+	Uid uint `gorm:"type:int" form:"uid"`
 }
 
 func QueryExtractTable(et ExtractTable) (err error) {
