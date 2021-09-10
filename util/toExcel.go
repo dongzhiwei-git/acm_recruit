@@ -57,7 +57,7 @@ func ToExcel(form []models.ApplyForm, ctx *gin.Context) {
 
 	}
 	ctx.Header("Content-Type", "application/octet-stream")
-	ctx.Header("Content-Disposition", "attachment; filename="+"Workbook.xlsx")
+	ctx.Header("Content-Disposition", "attachment; filename="+"报名表.xlsx")
 	ctx.Header("Content-Transfer-Encoding", "binary")
 	_ = f.Write(ctx.Writer)
 	err := f.SaveAs("testoo1.xlsx")
