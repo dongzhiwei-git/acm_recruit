@@ -22,11 +22,11 @@ type ApplyForm struct {
 }
 
 func CreateForm(applyForm *ApplyForm) (err error) {
-	if sex, _ := strconv.Atoi(applyForm.Sex);sex==1{
-		applyForm.Sex = "男"
-	}else {
-		applyForm.Sex = "女"
-	}
+	//if sex, _ := strconv.Atoi(applyForm.Sex);sex==1{
+	//	applyForm.Sex = "男"
+	//}else {
+	//	applyForm.Sex = "女"
+	//}
 	err = dao.DB.Create(&applyForm).Error
 	return err
 
