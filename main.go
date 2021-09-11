@@ -5,9 +5,6 @@ import (
 	"acm_recruit/models"
 	"acm_recruit/routers"
 	"fmt"
-
-
-	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 func main() {
@@ -19,17 +16,25 @@ func main() {
 		return
 	}
 
-	defer dao.Close()
 	// bind model
 	// create table applyFrom
-	dao.DB.AutoMigrate(models.ApplyForm{})
-	dao.DB.AutoMigrate(models.ExtractTable{})
-	dao.DB.AutoMigrate(models.Admin{})
+	err = dao.GetDBInstance().DB.AutoMigrate(models.ApplyForm{})
+	if err != nil {
+		return
+	}
+	err = dao.GetDBInstance().DB.AutoMigrate(models.ExtractTable{})
+	if err != nil {
+		return
+	}
+	err = dao.GetDBInstance().DB.AutoMigrate(models.Admin{})
+	if err != nil {
+		return
+	}
 
 	// setup router
 	r := routers.SetupRouter()
 
-    // setup listen
+	// setup listen
 	err = r.Run(":8000")
 	if err != nil {
 		fmt.Printf("run failed: %v\n", err)

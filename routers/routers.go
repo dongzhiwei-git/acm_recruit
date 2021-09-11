@@ -2,8 +2,10 @@ package routers
 
 import (
 	"acm_recruit/controller"
-	"github.com/gin-gonic/gin"
+	"acm_recruit/middlewares"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 var r *gin.Engine
@@ -14,10 +16,12 @@ func SetupRouter() *gin.Engine {
 	{
 		r = gin.Default()
 		// to solve the cross domain
-		r.GET("/ping",func(ctx *gin.Context){
-			ctx.JSON(http.StatusOK,nil)
+		r.GET("/ping", func(ctx *gin.Context) {
+			ctx.JSON(http.StatusOK, nil)
 		})
 	}
+
+	r.Use(middlewares.CrossHandler, middlewares.DBMiddleware)
 	// found templates
 	//r.LoadHTMLGlob("templates/*")
 	//
