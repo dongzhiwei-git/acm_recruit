@@ -8,6 +8,7 @@ import (
 type ExtractTable struct {
 	gorm.Model
 	Uid string `gorm:"type:varchar(20)" json:"password"`
+
 }
 
 func QueryExtractTable(et ExtractTable) (et1 ExtractTable, err error) {
