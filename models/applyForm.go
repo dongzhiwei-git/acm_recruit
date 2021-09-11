@@ -33,14 +33,8 @@ func QueryAllForm() (af []ApplyForm, err error) {
 	err = dao.DB.Find(&af).Error
 	return af, err
 }
-<<<<<<< HEAD
-//func QueryForm(uid uint)(err error){
-//	err = dao.DB.Where("uid=?", uid).First(&ExtractTable{}).Error
-//	return err
-//}
-=======
+
 func QueryForm(uid uint) (err error) {
 	err = dao.DB.Where("uid=?", uid).First(&ExtractTable{}).Error
 	return err
 }
->>>>>>> 8bc2dd7d443215349d0f696ab8157fcb92597735
