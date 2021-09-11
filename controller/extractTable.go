@@ -21,11 +21,18 @@ func QueryExtractTable(ctx *gin.Context) {
 	et1 = extractTable
 	et, err := models.QueryExtractTable(et1)
 	fmt.Println("uid:", extractTable.Uid, et.Uid)
+	if et.Uid == "0" || extractTable.Uid == "0"{
+		ctx.JSON(http.StatusForbidden, gin.H{
+			"msg": "提取码错误！",
+		})
+		return
+	}
 	if extractTable.Uid == et.Uid{
 		fmt.Println("==::==")
 		ets, err = models.QueryAllForm()
 		util.ToExcel(ets, ctx)
 	}
+
 
 	if err != nil {
 		fmt.Printf("failed query err:%v\n", err)

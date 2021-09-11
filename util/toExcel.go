@@ -51,20 +51,20 @@ func 	ToExcel(form []models.ApplyForm, ctx *gin.Context){
 	for k, v := range categories {
 		err := f.SetCellValue("Sheet1", k, v)
 		if err != nil {
-			return 
+			return
 		}
 	}
 	for _, v := range values {
 		for k1, v1 := range v{
 			err := f.SetCellValue("Sheet1", k1, v1)
 			if err != nil {
-				return 
+				return
 			}
 		}
-		
+
 	}
 	ctx.Header("Content-Type", "application/octet-stream")
-	ctx.Header("Content-Disposition", "attachment; filename="+"Workbook.xlsx")
+	ctx.Header("Content-Disposition", "attachment; ACM报名表.xlsx")
 	ctx.Header("Content-Transfer-Encoding", "binary")
 	_ = f.Write(ctx.Writer)
 	//err := f.SaveAs("testoo1.xlsx")

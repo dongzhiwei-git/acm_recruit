@@ -6,6 +6,7 @@ import (
 	"acm_recruit/routers"
 	"fmt"
 
+
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
@@ -17,6 +18,7 @@ func main() {
 		fmt.Printf("failed to connecte mysql: %v", err)
 		return
 	}
+
 	defer dao.Close()
 	// bind model
 	// create table applyFrom
