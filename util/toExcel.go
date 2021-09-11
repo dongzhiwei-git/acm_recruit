@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/xuri/excelize/v2"
 	"strconv"
+	"time"
 )
 
 func ToExcel(form []models.ApplyForm, ctx *gin.Context) {
@@ -41,6 +42,7 @@ func ToExcel(form []models.ApplyForm, ctx *gin.Context) {
 
 	}
 	f := excelize.NewFile()
+	index := f.NewSheet("Sheet1")
 	for k, v := range categories {
 		err := f.SetCellValue("Sheet1", k, v)
 		if err != nil {
@@ -56,13 +58,16 @@ func ToExcel(form []models.ApplyForm, ctx *gin.Context) {
 		}
 
 	}
+	f.SetActiveSheet(index)
+
+	timeStr := time.Now().Format("2006-01-02_15-04-05")
 	ctx.Header("Content-Type", "application/octet-stream")
-	ctx.Header("Content-Disposition", "attachment; filename="+"报名表.xlsx")
+	ctx.Header("Content-Disposition", "attachment; filename="+timeStr+".xlsx")
 	ctx.Header("Content-Transfer-Encoding", "binary")
 	_ = f.Write(ctx.Writer)
-	err := f.SaveAs("testoo1.xlsx")
-	if err != nil {
-		panic(err)
-	}
+	//err := f.SaveAs("testoo1.xlsx")
+	//if err != nil {
+	//	panic(err)
+	//}
 
 }

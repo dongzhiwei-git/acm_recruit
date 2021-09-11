@@ -38,9 +38,9 @@ func QueryExtractTable(ctx *gin.Context) {
 	}
 	util.ToExcel(ets, ctx)
 	fmt.Println(ets[0].Sex)
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "提取成功！",
-	})
+	//ctx.JSON(http.StatusOK, gin.H{
+	//	"msg": "提取成功！",
+	//})
 }
 func CreateExtractTable(ctx *gin.Context) {
 	var extractTable models.ExtractTable
