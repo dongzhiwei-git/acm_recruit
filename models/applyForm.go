@@ -11,13 +11,14 @@ import (
 type ApplyForm struct {
 	gorm.Model
 	Group         string `json:"group" gorm:"type:varchar(20)"`
-	Name          string `json:"name" gorm:"type:varchar(20)"`
-	Sex           string `json:"sex" gorm:"type:varchar(20)"`
+	Major         string `json:"major" gorm:"type:varchar(20)"`
 	Series        string `json:"series" gorm:"type:varchar(20)"`
 	Classes       string `json:"classes" gorm:"type:varchar(20)"`
 	StudentNum    string `json:"studentNum" gorm:"type:varchar(20)"`
-	QQNum         string `json:"qqNum" gorm:"type:varchar(20)"`
+	Name          string `json:"name" gorm:"type:varchar(20)"`
+	Sex           string `json:"sex" gorm:"type:varchar(20)"`
 	PhoneNum      string `json:"phoneNum" gorm:"type:varchar(20)"`
+	QQNum         string `json:"qqNum" gorm:"type:varchar(20)"`
 	Introductions string `json:"introductions"`
 }
 
