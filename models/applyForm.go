@@ -3,10 +3,8 @@ package models
 import (
 	"acm_recruit/dao"
 	"github.com/jinzhu/gorm"
-	"strconv"
+	//"strconv"
 )
-
-
 
 type ApplyForm struct {
 	gorm.Model
@@ -31,11 +29,11 @@ func CreateForm(applyForm *ApplyForm) (err error) {
 	return err
 
 }
-func QueryAllForm()(af []ApplyForm, err error){
+func QueryAllForm() (af []ApplyForm, err error) {
 	err = dao.DB.Find(&af).Error
 	return af, err
 }
-func QueryForm(uid uint)(err error){
+func QueryForm(uid uint) (err error) {
 	err = dao.DB.Where("uid=?", uid).First(&ExtractTable{}).Error
 	return err
 }
