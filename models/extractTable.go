@@ -7,17 +7,18 @@ import (
 
 type ExtractTable struct {
 	gorm.Model
-	Uid uint `gorm:"type:int" form:"uid"`
+	Password string `json:"password" gorm:"type:varchar(20)" form:"password"`
 }
 
-func QueryExtractTable(et ExtractTable) (err error) {
+func QueryExtractTable(et ExtractTable) (result ExtractTable, err error) {
 
-	if err = dao.DB.Where("uid=?", et.Uid).First(&et).Error; err != nil {
-		return err
+	if err = dao.DB.Where("password=?", et.Password).First(&result).Error; err != nil {
+		return result, err
 	}
-	return err
+	return result, nil
 
 }
+
 //func QueryAllExtractTable(et []ExtractTable) ([]ExtractTable, error ) {
 //
 //	if err := dao.DB.Find(&et).Error; err != nil {
@@ -27,7 +28,7 @@ func QueryExtractTable(et ExtractTable) (err error) {
 //
 //}
 
-func CreateExtractTable(et *ExtractTable)(err error){
+func CreateExtractTable(et *ExtractTable) (err error) {
 	err = dao.DB.Create(et).Error
 	return err
 }
