@@ -36,7 +36,7 @@ func ToExcel(form []models.ApplyForm, ctx *gin.Context) {
 			"G" + strconv.Itoa(i+2): v.StudentNum,
 			"H" + strconv.Itoa(i+2): v.QQNum,
 			"I" + strconv.Itoa(i+2): v.PhoneNum,
-			"J" + strconv.Itoa(i+2): v.Introduction,
+			"J" + strconv.Itoa(i+2): v.Introductions,
 		}
 
 	}
