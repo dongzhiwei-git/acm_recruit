@@ -3,8 +3,9 @@ package controller
 import (
 	"acm_recruit/models"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func AdminLogin(ctx *gin.Context) {
@@ -25,7 +26,6 @@ func AdminLogin(ctx *gin.Context) {
 	}
 	ctx.JSON(http.StatusOK, gin.H{
 		"msg": "登录成功！",
-
 	})
 
 }
@@ -39,7 +39,7 @@ func AdminRegister(ctx *gin.Context) {
 		})
 		return
 	}
-	err = models.CreateAdmin(admin)
+	err = models.CreateAdmin(ctx, admin)
 
 	if err != nil {
 		fmt.Printf("err2:%v", err)
@@ -53,4 +53,3 @@ func AdminRegister(ctx *gin.Context) {
 	})
 
 }
-

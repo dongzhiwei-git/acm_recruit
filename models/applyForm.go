@@ -2,7 +2,8 @@ package models
 
 import (
 	"acm_recruit/dao"
-	"github.com/jinzhu/gorm"
+
+	"gorm.io/gorm"
 	//"strconv"
 )
 
@@ -25,16 +26,16 @@ func CreateForm(applyForm *ApplyForm) (err error) {
 	//}else {
 	//	applyForm.Sex = "女"
 	//}
-	err = dao.DB.Create(&applyForm).Error
+	err = dao.GetDBInstance().DB.Create(&applyForm).Error
 	return err
 
 }
 func QueryAllForm() (af []ApplyForm, err error) {
-	err = dao.DB.Find(&af).Error
+	err = dao.GetDBInstance().DB.Find(&af).Error
 	return af, err
 }
 
 func QueryForm(uid uint) (err error) {
-	err = dao.DB.Where("uid=?", uid).First(&ExtractTable{}).Error
+	err = dao.GetDBInstance().DB.Where("uid=?", uid).First(&ExtractTable{}).Error
 	return err
 }
