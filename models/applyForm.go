@@ -16,7 +16,7 @@ type ApplyForm struct {
 	StudentNum    string `json:"studentNum" gorm:"type:varchar(20)"`
 	QQNum         string `json:"qqNum" gorm:"type:varchar(20)"`
 	PhoneNum      string `json:"phoneNum" gorm:"type:varchar(20)"`
-	Introductions string `json:"introductions" gorm:"type:varchar(2000)"`
+	Introductions string `json:"introductions"`
 }
 
 func CreateForm(applyForm *ApplyForm) (err error) {
