@@ -9,6 +9,7 @@ var(
 )
 
 //	connect database
+
 func InitMySQL()(err error){
 	conn := "root:123@tcp(172.17.0.1:3306)/Blog?charset=utf8&parseTime=True&loc=Local"
 	DB, err = gorm.Open("mysql", conn)
